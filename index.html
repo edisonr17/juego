@@ -2,17 +2,57 @@
 <html>
   <head>
     <title>Mi juego</title>
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.7.0/dist/paper.min.css">
+
   </head>
   <body>
-    <canvas id="gameCanvas" width="800" style="border: 1px solid black" height="600"></canvas>
+    <div class="papel container">
+
+
+      <div class="row">
+        <div class="col-12 col">
+          
+         
+
+
+
+
+
+
+          <div class="card" style="width: 100%;">
+            <canvas id="gameCanvas" width="800" style="border: 1px solid black" height="600" class="flex-spaces child-borders"></canvas>
+          
+            <div class="card-body">
+              <h4 class="card-title">My awesome Paper card!</h4>
+              <h5 class="card-subtitle">Nice looking subtitle.</h5>
+              <p class="card-text">Notice that the card width in this example have been set to 20rem, otherwise it will try to fill the current container/row where the card is.</p>
+              <button>Let me go here!</button>
+            </div>
+          </div>
+
+
+
+        </div>
+        <button class="btn-success">Success</button>
+
+
+
+      </div>
+
+   
+      
+
+  </div>
     <script>
        window.onload= function(){
-           // trazosColores();
-           main();
+          //trazosColores();
+          experimentPart1();
+
         };
         
     </script>
     <script src="trazosColores.js"> </script>
     <script src="main.js"> </script>
+    <script src="part1Experiment.js"> </script>
   </body>
 </html>

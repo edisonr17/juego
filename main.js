@@ -81,11 +81,15 @@ function main() {
     ) {
       console.log("Entro aquí");
       ballSpeedY *= -1;
+
+      var centerOfPaddleX = paddleX + PADDLE_WIDTH / 2;
+      var ballDistFromPaddleCenterX = ballX-centerOfPaddleX;
+      ballSpeedX = ballDistFromPaddleCenterX * .35;
     }
   }
 
   function drawAll() {
-    colorRect(0, 0, canvas.width, canvas.height, "white");
+    colorRect(0, 0, canvas.width, canvas.height, "black");
     colorRect(
       paddleX,
       canvas.height - PADDLE_DIST_FROM_EDGE,
