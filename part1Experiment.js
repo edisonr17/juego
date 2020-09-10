@@ -19,9 +19,17 @@ var experimentPart1 = function () {
     capturarClick();
   }
 
-  function runApplication() {}
+  function runApplication() {
 
-  function capturarClick() {
+  }
+
+
+  function makeEffect(){
+    
+  }
+
+
+  function capturarClick()  {
     canvas.addEventListener("click", function (event) {
       console.log(event);
       var canvas = document.getElementById("gameCanvas");
