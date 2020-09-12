@@ -11,22 +11,17 @@ function main() {
   var framesPerSecond = 30;
   const BRICK_W = 100;
   const BRICK_H = 50;
-  const BRICK_COUNT = 4;
-
+  const BRICK_COUNT = 8;
+  const BRICK_GRID =  new Array(BRICK_COUNT);
   var paddleX = 400;
 
   var mouseX = 0;
   var mouseY = 0;
-
+  brickReset();
   const PADDLE_WIDTH = 100;
   const PADDLE_THICKNESS = 10;
   const PADDLE_DIST_FROM_EDGE = 60;
-  var brick1 = true;
-  var brick2 = true;
-  var brick3 = true;
-  var brick4 = true;
-  var brick5 = true;
-  var brick6 = true;
+
   function updateMousePos(evt) {
     var rect = canvas.getBoundingClientRect();
     var root = document.documentElement;
@@ -53,6 +48,13 @@ function main() {
     drawAll();
   }
 
+
+  function brickReset(){
+    for(var $i =0; $i< BRICK_GRID.length; $i++)
+    {
+      BRICK_GRID[$i] = true;
+    }
+  }
   function ballReset() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
@@ -98,37 +100,16 @@ function main() {
     }
   }
   function drawBricks() {
-  
-    if(brick1 == true)
-    {
-      colorRect(0, 0, BRICK_W-2, BRICK_H, "BLUE");
-    }
-    if(brick2 == true)
-    {
-      colorRect(BRICK_W, 0, BRICK_W-2, BRICK_H, "BLUE");
-    }
-
-    if(brick3 == true)
-    {
-      colorRect(BRICK_W*2, 0, BRICK_W-2, BRICK_H, "BLUE");
-    }
-
-    if(brick4 == true)
-    {
-      colorRect(BRICK_W*3, 0, BRICK_W-2, BRICK_H, "BLUE");
-    }
-
-    if(brick5 == true)
-    {
-      colorRect(BRICK_W*4, 0, BRICK_W-2, BRICK_H, "BLUE");
-    }
-
-    if(brick6 == true)
-    {
-      colorRect(BRICK_W, 0, BRICK_W-2, BRICK_H, "BLUE");
-    }
-  
     
+    for (var brickNum = 0; brickNum < BRICK_GRID.length ; brickNum++)
+    {
+      if(BRICK_GRID[brickNum])
+      {
+        colorRect(BRICK_W * brickNum, 0, BRICK_W-2, BRICK_H, "BLUE");
+      }
+    }
+
+   
     
     
   }
