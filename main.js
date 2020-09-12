@@ -12,6 +12,9 @@ function main() {
   const BRICK_W = 100;
   const BRICK_H = 50;
   const BRICK_COUNT = 8;
+  const BRICK_ROWS = 3;
+  const BRICK_GAP = 2;
+  
   const BRICK_GRID =  new Array(BRICK_COUNT);
   var paddleX = 400;
 
@@ -100,16 +103,20 @@ function main() {
     }
   }
   function drawBricks() {
-    
-    for (var brickNum = 0; brickNum < BRICK_GRID.length ; brickNum++)
+     
+    for (var eachRow = 0; eachRow < BRICK_ROWS ; eachRow++)
     {
-      if(BRICK_GRID[brickNum])
+      for (var brickNum = 0; brickNum < BRICK_GRID.length ; brickNum++)
       {
-        colorRect(BRICK_W * brickNum, 0, BRICK_W-2, BRICK_H, "BLUE");
+        if(BRICK_GRID[brickNum])
+        {
+          colorRect(BRICK_W * brickNum, BRICK_H * eachRow, BRICK_W-BRICK_GAP, BRICK_H -BRICK_GAP, "BLUE");
+        }
       }
     }
-
    
+
+ 
     
     
   }
@@ -125,8 +132,10 @@ function main() {
     colorCircle(ballX, ballY, 10, 0, Math.PI * 2, true);
 
     drawBricks();
+    var mouseBrickCol = mouseX/ BRICK_W;
+    var mouseBrickRow = mouseY/BRICK_H;
     colorText(
-      "x:" + mouseX.toFixed(2) + " y:" + mouseY.toFixed(2),
+      "x:" + mouseBrickCol.toFixed(2) + " y:" + mouseBrickRow.toFixed(2),
       mouseX,
       mouseY,
       "yellow"
