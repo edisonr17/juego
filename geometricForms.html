@@ -3,7 +3,8 @@
   <head>
     <title>Mi juego</title>
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.7.0/dist/paper.min.css">
-
+    <script src="geometricForms.js"> </script>
+    <script src="cube.js"> </script>
   </head>
   <body>
     <div class="papel container">
@@ -37,7 +38,8 @@
 
 
         </div>
-        <button class="btn-success">Success</button>
+        <button class="btn-success" onclick="cube()">CUBO</button>
+        <button class="btn-success" onclick="rotate()">ROTATE</button>
 
 
 
@@ -50,12 +52,15 @@
     <script>
        window.onload= function(){
           //trazosColores();
-          geometricForms();
+         
+          //geometricForms();
 
         };
         
     </script>
    
-    <script src="geometricForms.js"> </script>
+   
+
+
   </body>
 </html>

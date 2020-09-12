@@ -1,4 +1,4 @@
-var rotate = function () {
+var cube = function () {
     var canvas = document.getElementById("gameCanvas");
     var context = canvas.getContext("2d");
     const BACKGROUND_COLOR = "black";
@@ -6,7 +6,7 @@ var rotate = function () {
     inicializingVariables();
   
     function inicializingVariables() {
-      var framesPerSecond = 2;
+      var framesPerSecond = 30;
      
       var interval = setInterval(runApplication, 1000 / framesPerSecond);
       //capturarClick();
@@ -31,11 +31,7 @@ var rotate = function () {
         drawLine(canvas.width/4, canvas.height/2, (canvas.width/3), canvas.height/4*2.33, dame_color_aleatorio());
         drawSquare(canvas.width/4, canvas.height/4 , canvas.width/4, canvas.height/4, dame_color_aleatorio());
         drawSquare(canvas.width/3, canvas.height/3 , canvas.width/4, canvas.height/4, dame_color_aleatorio());
-       
       
-        context.translate(canvas.width/2,  canvas.height/2);
-        context.rotate(20*Math.PI/180 );
-        context.translate(-150, -75);
         
        
     }
